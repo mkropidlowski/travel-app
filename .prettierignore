@@ -1,0 +1,17 @@
+.next
+.storybook
+.storybook/*
+.husky
+dist
+node_modules/
+out
+build
+storybook-static
+next-env.d.ts
+be_types
+Ts/*
+Ts/be_types/*
+cypress/
+components/icons
+next-auth.d.ts
+.env
