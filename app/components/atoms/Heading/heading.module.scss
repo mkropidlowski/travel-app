@@ -1,0 +1,47 @@
+@import 'styles/variables.scss';
+@import 'styles/breakpoints.scss';
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+	color: $color-black;
+	position: relative;
+	font-family: $font-main;
+	text-align: center;
+	&.bold {
+		font-weight: 800;
+	}
+}
+
+.h1 {
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 48px;
+}
+
+.h2 {
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 44px;
+}
+
+.h3 {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.h4 {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.h5 {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 18px;
+}
+

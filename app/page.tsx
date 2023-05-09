@@ -1,10 +1,21 @@
-import styles from './page.module.css';
+import { NextPage } from 'next';
+import Layout from './components/organism/Layout/Layout';
+import Hero from './components/organism/Hero/Hero';
+import PopularAttraction from 'components/molecules/PopularAttraction/PopularAttraction';
+import SectionsLayout from 'components/organism/SectionsLayout/SectionsLayout';
+import Attractions from 'components/molecules/Attractions/Attraction';
 
-export default function Home() {
+const Home: NextPage = () => {
 	return (
-		<main className={styles.main}>
-			<h1 className="text-3xl font-bold underline">Hello world!</h1>
-		</main>
+		<Layout>
+			<Hero />
+			<SectionsLayout>
+				<PopularAttraction />
+				<Attractions />
+			</SectionsLayout>
+		</Layout>
 	);
-}
+};
+
+export default Home;
 

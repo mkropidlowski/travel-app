@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/breakpoints.scss';
+
+.button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	opacity: 1;
+	height: fit-content;
+	padding: 13px 45px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+	font-family: $font-main;
+	line-height: 17px;
+	border: none;
+	border-radius: 10px;
+	transition: 0.5s;
+	&:disabled {
+		cursor: auto;
+		pointer-events: none;
+		opacity: 0.3;
+	}
+}
+
+@mixin buttonStyles($background, $color, $bgHover, $colorOnHover) {
+	color: $color;
+	background-color: $background;
+	border: none;
+	&:hover,
+	&:active {
+		background-color: $bgHover;
+		color: $colorOnHover;
+	}
+}
+
+.buttonPrimary {
+	@include buttonStyles('transparent', $color-white, $color-orange, $color-white);
+}
+
+.buttonSecondary {
+	@include buttonStyles($color-orange, $color-white, $color-orange, $color-white);
+}
+
