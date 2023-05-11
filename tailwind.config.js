@@ -17,6 +17,12 @@ module.exports = {
 				secondary: {
 					DEFAULT: '#202945',
 				},
+				cardColor: {
+					DEFAULT: '#4b55c0',
+				},
+				footerColor: {
+					DEFAULT: '#3b82f6',
+				},
 			},
 			width: {
 				1440: '1440px',

@@ -42,3 +42,7 @@
 	@include buttonStyles($color-orange, $color-white, $color-orange, $color-white);
 }
 
+.buttonTertiary {
+	@include buttonStyles($color-green, $color-white, $color-green, $color-white);
+}
+

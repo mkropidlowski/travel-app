@@ -6,7 +6,9 @@ export interface ISectionsLayoutProps {
 }
 
 const SectionsLayout: FC<ISectionsLayoutProps> = ({ children }) => (
-	<div className={clsx('flex flex-col items-center justify-center w-full')}>{children}</div>
+	<div className={clsx('relative mt-[70px] flex flex-col items-center justify-center w-full h-auto gap-[50px]')}>
+		{children}
+	</div>
 );
 
 export default SectionsLayout;

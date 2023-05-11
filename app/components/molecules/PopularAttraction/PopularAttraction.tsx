@@ -9,7 +9,7 @@ export interface IPopularAttractionProps {
 }
 const PopularAttraction: FC<IPopularAttractionProps> = ({ cities = citiesMockup }) => {
 	return (
-		<section className={clsx('relative top-[100px] max-w-[1000px] h-[70vh]')}>
+		<section className={clsx('max-w-[1000px] h-auto')}>
 			<div className={clsx('w-full')}>
 				<Heading variant="h2" className={clsx('!text-left font-medium uppercase')}>
 					Dostępne atrakcje
