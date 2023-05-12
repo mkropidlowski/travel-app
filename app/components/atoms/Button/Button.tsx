@@ -12,7 +12,14 @@ interface Props extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
 const Button = forwardRef<HTMLButtonElement, Props>(
 	({ color = 'primary', type = 'button', size = 'medium', className, children, ...rest }, ref) => {
 		return (
-			<button className={clsx(styles.button, styles[`button${capitalize(color)}`], styles[`button${capitalize(size)}`])}>
+			<button
+				className={clsx(
+					styles.button,
+					styles[`button${capitalize(color)}`],
+					styles[`button${capitalize(size)}`],
+					className
+				)}
+			>
 				{children}
 			</button>
 		);

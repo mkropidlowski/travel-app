@@ -4,7 +4,7 @@ export const menuLinks = {
 		text: 'Home',
 	},
 	attraction: {
-		id: 'atrakcje',
+		id: 'attraction',
 		text: 'Atrakcje',
 	},
 	addAttraction: {

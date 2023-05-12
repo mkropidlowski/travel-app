@@ -12,4 +12,7 @@ module.exports = {
 		unoptimized: true,
 		domains: ['img.icons8.com'],
 	},
+	reactStrictMode: true,
+	experimental: { appDir: true },
 };
+

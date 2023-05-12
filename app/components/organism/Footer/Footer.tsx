@@ -5,11 +5,13 @@ import Input from 'components/atoms/Input/Input';
 import Link from 'next/link';
 import { FC } from 'react';
 
-export interface IFooter {}
+export interface IFooter {
+	className?: string;
+}
 
-const Footer: FC<IFooter> = () => {
+const Footer: FC<IFooter> = ({ className }) => {
 	return (
-		<footer className={clsx('mt-[150px] w-full h-[300px] bg-footerColor text-white rounded-t-[20px]')}>
+		<footer className={clsx('mt-[150px] w-full h-[300px] bg-footerColor text-white rounded-t-[20px]', className)}>
 			<Heading variant="h1" className={clsx('p-5 text-white !text-left font-semibold')}>
 				Travel Portal
 			</Heading>

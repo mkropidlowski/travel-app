@@ -1,5 +1,5 @@
 export interface BE_Attraction {
-	id?: number;
+	id?: string;
 	title?: string;
 	description?: string;
 	city?: string;

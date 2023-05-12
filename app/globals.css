@@ -12,9 +12,9 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-body,
-html {
-	scroll-behavior: smooth;
+html,
+body {
+	scroll-behavior: smooth !important;
 	min-width: 375px;
 	width: 100%;
 }
