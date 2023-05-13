@@ -1,6 +1,5 @@
 'use client';
 import { FC, useEffect, useState } from 'react';
-import styles from './attractions.module.scss';
 import Heading from 'components/atoms/Heading/Heading';
 import clsx from 'clsx';
 import CardsContainer from '../CardsContainer/CardsContainer';
@@ -19,7 +18,7 @@ const Attractions: FC<IAttractions> = () => {
 	return (
 		<section className={clsx('max-w-[1000px] h-auto')} id="attraction">
 			<div className={clsx('w-full')}>
-				<Heading variant="h2" className={clsx('!text-left font-medium uppercase', styles.heading)}>
+				<Heading variant="h2" className={clsx('!text-left font-medium uppercase')}>
 					Atrakcje
 				</Heading>
 			</div>

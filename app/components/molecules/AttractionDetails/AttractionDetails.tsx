@@ -1,12 +1,19 @@
 import { BE_Attraction } from 'types/types';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
+import styles from './attractionDetails.module.scss';
 import Layout from 'components/organism/Layout/Layout';
 import Footer from 'components/organism/Footer/Footer';
 import Heading from 'components/atoms/Heading/Heading';
 import Loading from 'components/icons/Loading';
 import Button from 'components/atoms/Button/Button';
+import Link from 'next/link';
+
+import wwwIcon from '../../../../public/images/wwwIcon.png';
+import mailIcon from '../../../../public/images/mail.png';
+import telephoneIcon from '../../../../public/images/telephone.png';
+import attrIcon from '../../../../public/images/attraction.png';
 
 const AttractionsDetails: FC<BE_Attraction> = ({
 	id,
@@ -18,6 +25,9 @@ const AttractionsDetails: FC<BE_Attraction> = ({
 	province,
 	category,
 	city,
+	phone,
+	email,
+	wwwLink,
 }) => {
 	return (
 		<>
@@ -39,6 +49,34 @@ const AttractionsDetails: FC<BE_Attraction> = ({
 									<Button color="secondary" className={clsx('mt-[15px]')}>
 										Cena: {price} {priceCurrency}
 									</Button>
+									<div>
+										<ul className={styles.informationList}>
+											<li>
+												<Image src={attrIcon} alt={category ?? ''} />
+												{category}
+											</li>
+											<li>
+												<Image src={telephoneIcon} alt={phone ?? ''} />
+												{phone}
+											</li>
+											<li>
+												<Image src={mailIcon} alt={email ?? ''} />
+												{email}
+											</li>
+											<li>
+												{wwwLink ? (
+													<>
+														<Image src={wwwIcon} alt={wwwLink ?? ''} />
+														<Link href={wwwLink} replace target="_blank">
+															{wwwLink}
+														</Link>
+													</>
+												) : (
+													''
+												)}
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</section>

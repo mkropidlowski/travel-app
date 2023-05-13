@@ -8,5 +8,8 @@ export interface BE_Attraction {
 	src?: string;
 	price?: string | number;
 	priceCurrency?: string;
+	phone?: string;
+	email?: string;
+	wwwLink?: string;
 }
 

@@ -1,5 +1,4 @@
 import { BE_Attraction } from 'types/types';
-import styles from './card.module.scss';
 import { FC } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -21,18 +20,18 @@ const Card: FC<ICard> = ({ attraction }) => {
 	return (
 		<div
 			className={clsx(
-				'flex flex-col justify-between w-[320px] h-[400px] bg-cardColor p-5 rounded-[15px] hover:bg-sky-700 cursor-pointer'
+				'flex flex-col justify-between w-[320px] h-[450px] bg-cardColor p-5 rounded-[15px] hover:bg-sky-700 cursor-pointer'
 			)}
 			key={attraction?.id}
 			onClick={handleCardClick}
 		>
-			<div className={clsx('h-[300px]')}>
+			<div className={clsx('h-[250px]')}>
 				<Image
-					src={attraction?.src ?? 'https://placehold.jp/300x200.png'}
+					src={attraction?.src ?? ''}
 					alt={attraction?.title ?? 'Bład wczytywania zdjęcia.'}
-					width={300}
-					height={300}
-					className={clsx('h-fit')}
+					width={200}
+					height={200}
+					className={clsx('object-cover w-full h-full')}
 				/>
 			</div>
 			<div className={clsx('text-white p-3')}>

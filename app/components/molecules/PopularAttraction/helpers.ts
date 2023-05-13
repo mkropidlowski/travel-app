@@ -41,3 +41,16 @@ export const citiesMockup = {
 	},
 };
 
+{
+	/* {Object.values(cities).map(({ label, offerList }) => (
+					<div key={label} className={'flex p-6 gap-5 w-[250px]'}>
+						<Image src="https://placehold.jp/50x50.png" alt="img" width={50} height={50} />
+						<div className={clsx('flex flex-col items-start')}>
+							<Heading variant="h4" className={clsx('')}>
+								{label}
+							</Heading>
+							<p>{offerList} atrakcji</p>
+						</div>
+					</div>
+				))} */
+}

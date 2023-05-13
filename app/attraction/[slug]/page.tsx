@@ -26,6 +26,9 @@ const AttractionsDetailsPage = ({ params }: { params: { slug: string } }) => {
 				priceCurrency={selectedAttr?.priceCurrency}
 				province={selectedAttr?.province}
 				category={selectedAttr?.category}
+				phone={selectedAttr?.phone}
+				email={selectedAttr?.email}
+				wwwLink={selectedAttr?.wwwLink}
 			/>
 		</div>
 	);

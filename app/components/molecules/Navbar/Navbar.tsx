@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { NavbarProps } from './types';
 import clsx from 'clsx';
-import styles from './navbar.module.scss';
 import { menuLinks } from './helpers';
 import Link from 'next/link';
 import Button from 'components/atoms/Button/Button';
