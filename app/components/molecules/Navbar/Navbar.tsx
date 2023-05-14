@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 				{Object.values(links).map(({ id, text }) => {
 					const linkHref = `/#${id}`;
 					return (
-						<li>
+						<li key={id}>
 							<Link href={linkHref}>
 								<Button>{text}</Button>
 							</Link>
