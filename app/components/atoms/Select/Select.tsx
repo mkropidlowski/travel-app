@@ -30,7 +30,7 @@ const SelectField: FC<ISelectProps> = ({
 	const [selectedOption, setSelectedOptions] = useState<OptionValue[] | null>();
 
 	const handleChange = (selectedOptions: OnChangeValue<OptionValue, true>) => {
-		setSelectedOptions(selectedOptions as OptionValue[]);
+		setSelectedOptions(selectedOptions as any);
 
 		if (onChange) {
 			const optionsArray = selectedOptions.map((option) => option as OptionValue);
@@ -44,10 +44,10 @@ const SelectField: FC<ISelectProps> = ({
 				aria-label=""
 				instanceId={useId()}
 				aria-labelledby=""
-				options={optionValue}
+				options={optionValue.map((option) => ({ label: option.label }))}
 				className={clsx('relative top-[9px] w-[250px]')}
 				placeholder="Województwo"
-				isMulti
+				isMulti={true}
 				onChange={handleChange}
 				onMenuOpen={() => setIsMenuOpen(true)}
 				onMenuClose={() => setIsMenuOpen(false)}
