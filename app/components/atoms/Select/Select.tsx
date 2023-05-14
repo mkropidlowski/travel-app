@@ -3,8 +3,7 @@ import clsx from 'clsx';
 import { FC, useState } from 'react';
 import styles from './select.module.scss';
 import { optionsLabel } from './helpers';
-import Select, { ActionMeta } from 'react-select';
-import ValueType from 'react-select';
+import Select, { OnChangeValue } from 'react-select';
 import type { OptionValue } from './types';
 import { useId } from 'react';
 
@@ -30,11 +29,12 @@ const SelectField: FC<ISelectProps> = ({
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [selectedOption, setSelectedOptions] = useState<OptionValue[] | null>();
 
-	const handleChange = (selectedOptions: ValueType<OptionValue>, actionMeta: ActionMeta<OptionValue>) => {
+	const handleChange = (selectedOptions: OnChangeValue<OptionValue, true>) => {
 		setSelectedOptions(selectedOptions as OptionValue[]);
 
 		if (onChange) {
-			onChange(selectedOptions as OptionValue[] | null);
+			const optionsArray = selectedOptions.map((option) => option as OptionValue);
+			onChange(optionsArray);
 		}
 	};
 
@@ -47,7 +47,7 @@ const SelectField: FC<ISelectProps> = ({
 				options={optionValue}
 				className={clsx('relative top-[9px] w-[250px]')}
 				placeholder="Województwo"
-				isMulti={true}
+				isMulti
 				onChange={handleChange}
 				onMenuOpen={() => setIsMenuOpen(true)}
 				onMenuClose={() => setIsMenuOpen(false)}
