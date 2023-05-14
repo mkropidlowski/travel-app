@@ -2,7 +2,8 @@
 import clsx from 'clsx';
 import Button from 'components/atoms/Button/Button';
 import Input from 'components/atoms/Input/Input';
-import SelectField, { OptionValue } from 'components/atoms/Select/Select';
+import SelectField from 'components/atoms/Select/Select';
+import { OptionValue } from 'components/atoms/Select/types';
 import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 

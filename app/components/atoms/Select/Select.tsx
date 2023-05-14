@@ -4,8 +4,8 @@ import { FC, useState } from 'react';
 import styles from './select.module.scss';
 import { optionsLabel } from './helpers';
 import Select, { ActionMeta } from 'react-select';
-import { ValueType } from 'react-select';
-import { OptionValue } from './types';
+import ValueType from 'react-select';
+import type { OptionValue } from './types';
 import { useId } from 'react';
 
 export interface ISelectProps {
@@ -15,7 +15,7 @@ export interface ISelectProps {
 	errorText?: string;
 	className?: string;
 	optionValue?: OptionValue[];
-	onChange?: (newValue: OptionValue[] | null) => void;
+	onChange?: (selectedOptions: OptionValue[] | null) => void;
 }
 
 const SelectField: FC<ISelectProps> = ({
