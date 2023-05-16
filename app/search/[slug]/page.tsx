@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import Heading from 'components/atoms/Heading/Heading';
 import SectionHeading from 'components/atoms/SectionHeading/SectionHeading';
 import { Bikers } from 'components/icons';
+import Loading from 'components/icons/Loading';
 import Card from 'components/molecules/Card/Card';
+import ErrorPage from 'components/molecules/ErrorPage/ErrorPage';
 import Footer from 'components/organism/Footer/Footer';
 import Layout from 'components/organism/Layout/Layout';
 import { useState, useEffect } from 'react';
@@ -12,6 +14,7 @@ import { BE_Attraction } from 'types/types';
 
 const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => {
 	const [attractions, setAttractions] = useState<BE_Attraction[]>([]);
+	const [error, setError] = useState('');
 	const provinceName = decodeURIComponent(params.slug);
 
 	useEffect(() => {
@@ -19,6 +22,10 @@ const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => 
 	}, []);
 
 	const searchByProvince = attractions.filter((singleProvince) => singleProvince.province === provinceName);
+
+	if (provinceName !== searchByProvince[0]?.province) {
+		return <ErrorPage />;
+	}
 
 	return (
 		<>
@@ -38,7 +45,7 @@ const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => 
 						))}
 					</section>
 				) : (
-					<p>{'elo'}</p>
+					<Loading />
 				)}
 			</Layout>
 			{provinceName ? <Footer className={clsx('absolute')} /> : null}

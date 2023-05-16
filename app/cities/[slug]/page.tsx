@@ -30,7 +30,7 @@ const CityAttractionDetails = ({ params }: { params: { slug: string } }) => {
 						Atrakcje {cityId}
 					</Heading>
 				</SectionHeading>
-				{cities ? (
+				{attractions ? (
 					<section className={clsx('mt-[100px] flex justify-center gap-7 max-w-[1000px] h-fit m-auto')}>
 						{cities.map((city, i) => (
 							<div key={i}>

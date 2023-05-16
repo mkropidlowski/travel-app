@@ -29,7 +29,7 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
 			defaultValue,
 			isError,
 			errorText,
-			onChange = () => null,
+			// onChange = () => null,
 			className,
 			required,
 			shouldRenderLabel = false,
