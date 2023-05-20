@@ -8,12 +8,14 @@ export const menuLinks = {
 		text: 'Atrakcje',
 	},
 	addAttraction: {
-		id: 'addAttraction',
+		id: 'add-attraction',
 		text: 'Dodaj atrakcje',
+		redirectToComponent: true,
 	},
 	account: {
 		id: 'account',
 		text: 'Zaloguj',
+		redirectToComponent: true,
 	},
 };
 

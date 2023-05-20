@@ -39,7 +39,7 @@ const PopularAttraction: FC<IProps> = ({ attraction }) => {
 
 	const handleCityClick = (cityId: string) => {
 		const decodeCityName = decodeURIComponent(cityId);
-		router.push(`/cities/${decodeCityName}`);
+		router.push(`pages/cities/${decodeCityName}`);
 	};
 
 	return (

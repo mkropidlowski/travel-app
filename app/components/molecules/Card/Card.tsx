@@ -15,7 +15,7 @@ const Card: FC<ICard> = ({ attraction }) => {
 	const router = useRouter();
 
 	const handleCardClick = () => {
-		router.push(`/attraction/${attraction?.id}`);
+		router.push(`pages/attraction/${attraction?.id}`);
 	};
 	return (
 		<div

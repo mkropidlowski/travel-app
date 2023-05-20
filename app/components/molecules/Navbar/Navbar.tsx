@@ -17,13 +17,24 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 				</Link>
 			</Heading>
 			<ul className={clsx('flex items-center gap-5')}>
-				{Object.values(links).map(({ id, text }) => {
+				{Object.values(links).map(({ id, text, redirectToComponent }) => {
 					const linkHref = `/#${id}`;
+					const hrefToComponent = `/pages/${id}`;
 					return (
 						<li key={id}>
-							<Link href={linkHref}>
-								<Button>{text}</Button>
-							</Link>
+							{redirectToComponent ? (
+								<Link href={hrefToComponent}>
+									<Button type="button" color="primary">
+										{text}
+									</Button>
+								</Link>
+							) : (
+								<Link href={linkHref}>
+									<Button type="button" color="primary">
+										{text}
+									</Button>
+								</Link>
+							)}
 						</li>
 					);
 				})}

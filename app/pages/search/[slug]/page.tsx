@@ -14,7 +14,6 @@ import { BE_Attraction } from 'types/types';
 
 const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => {
 	const [attractions, setAttractions] = useState<BE_Attraction[]>([]);
-	const [error, setError] = useState('');
 	const provinceName = decodeURIComponent(params.slug);
 
 	useEffect(() => {

@@ -29,7 +29,6 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
 			defaultValue,
 			isError,
 			errorText,
-			// onChange = () => null,
 			className,
 			required,
 			shouldRenderLabel = false,
@@ -37,7 +36,6 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
 		},
 		ref
 	) => {
-		// const inputHandler = (e: ChangeEvent<HTMLInputElement>) => onChange?.(e);
 		const inputPlaceholder = `${placeholder}${required ? '*' : ''}`;
 
 		return (
@@ -46,7 +44,6 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
 
 				{shouldRenderLabel ? <LabelText text={inputPlaceholder} className={styles.label} /> : null}
 				<input
-					// className={clsx(styles.input, styles[`activeInput-${!!inputHandler}`], !shouldRenderLabel && styles.hideLabel)}
 					className={clsx(styles.input, !shouldRenderLabel && styles.hideLabel)}
 					type={type}
 					defaultValue={defaultValue}

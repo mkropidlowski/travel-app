@@ -10,30 +10,28 @@
 .input,
 .input:-webkit-autofill {
 	font-family: $font-main;
-	// font-weight: $font-weight-main;
 	line-height: 14px;
 	letter-spacing: 0.2px;
 	font-size: 14px;
 	color: $color-black;
 	background: $color-white;
-	// border: 1px solid $color-light-gray;
 	padding: 8px 12px 8px 16px;
 	border-radius: 10px;
 	width: 100%;
 
-	// &:disabled {
-	// 	border: 1px solid $color-gray;
-	// 	background: $color-gray;
-	// }
-	// &:active {
-	// 	border: 1px solid $color-gray;
-	// }
-	// &:hover {
-	// 	border: 1px solid $color-blue;
-	// }
-	// &:focus {
-	// 	border: 1px solid $color-green;
-	// }
+	&:disabled {
+		border: 1px solid gray;
+		background: gray;
+	}
+	&:active {
+		outline: 1px solid gray;
+	}
+	&:hover {
+		outline: 1px solid $color-blue;
+	}
+	&:focus {
+		outline: 1px solid $color-green;
+	}
 }
 
 .label {
@@ -41,41 +39,38 @@
 	top: -5px;
 	font-size: 13px;
 }
-// .activeInput-true {
-// 	border: 1px solid $color-blue;
-// }
 
-// .errorMessage {
-// 	color: $color-red;
-// 	position: absolute;
-// 	font-size: 12px;
-// 	bottom: -20px;
-// 	~ .input {
-// 		border: 1px solid $color-red;
-// 	}
+.errorMessage {
+	color: $color-red;
+	position: absolute;
+	font-size: 12px;
+	bottom: -20px;
+	~ .input {
+		border: 1px solid $color-red;
+	}
 
-// 	&:active {
-// 		border: 1px solid $color-red;
-// 	}
-// }
+	&:active {
+		border: 1px solid $color-red;
+	}
+}
 
-// .successMessage {
-// 	color: $color-green;
-// 	position: absolute;
-// 	font-size: 14px;
-// 	bottom: -12px;
-// 	~ .input {
-// 		border: 1px solid $color-green;
-// 	}
+.successMessage {
+	color: $color-green;
+	position: absolute;
+	font-size: 14px;
+	bottom: -12px;
+	~ .input {
+		border: 1px solid $color-green;
+	}
 
-// 	&:focus {
-// 		outline: 1px solid $color-green;
-// 	}
-// }
+	&:focus {
+		outline: 1px solid $color-green;
+	}
+}
 
-// .hideLabel {
-// 	& ~ .label {
-// 		visibility: hidden;
-// 	}
-// }
+.hideLabel {
+	& ~ .label {
+		visibility: hidden;
+	}
+}
 

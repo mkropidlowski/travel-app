@@ -23,13 +23,13 @@ const SearchBar: FC = () => {
 		if (provinceName === undefined) {
 			setError('Wprowadź dane w jedno z pul na podstawie których chcesz szukać atrakcji.');
 		} else {
-			router.push(`/search/${provinceName}`);
+			router.push(`pages/search/${provinceName}`);
 			setError('');
 		}
 		if (cityInput === '') {
 			setError('Wprowadź dane w jedno z pul na podstawie których chcesz szukać atrakcji.');
 		} else {
-			router.push(`/cities/${cityInput}`);
+			router.push(`pages/cities/${cityInput}`);
 			setError('');
 		}
 	};
