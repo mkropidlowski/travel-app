@@ -1,4 +1,6 @@
+import ToasterContext from 'context/ToasterContext';
 import './globals.css';
+import AuthContext from 'context/AuthContext';
 
 export const metadata = {
 	title: 'Travel Portal',
@@ -8,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
-			<body suppressHydrationWarning={true}>{children}</body>
+			<body suppressHydrationWarning={true}>
+				<AuthContext>
+					<ToasterContext />
+					{children}
+				</AuthContext>
+			</body>
 		</html>
 	);
 }

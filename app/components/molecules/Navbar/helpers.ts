@@ -12,10 +12,5 @@ export const menuLinks = {
 		text: 'Dodaj atrakcje',
 		redirectToComponent: true,
 	},
-	account: {
-		id: 'account',
-		text: 'Zaloguj',
-		redirectToComponent: true,
-	},
 };
 

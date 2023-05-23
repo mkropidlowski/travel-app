@@ -4,3 +4,10 @@ export interface NavbarProps {
 	text?: string;
 }
 
+export interface MenuLinksProps {
+	id?: string;
+	text?: string;
+	redirectToComponent: boolean;
+	isUsername?: boolean;
+}
+

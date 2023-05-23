@@ -8,6 +8,7 @@ export const publicEnvs = {
 	FIREBASE_APP_ID: process.env.NEXT_PUBLIC_APP_ID as string,
 	FIREBASE_MEASURMENT_ID: process.env.NEXT_PUBLIC_MEASURMENT_ID as string,
 	FIREBASE_DATABASE_URL: process.env.NEXT_PUBLIC_DB_URL as string,
+	NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET as string,
 };
 
 export const isDevelopmentServer = process.env.NODE_ENV === 'development';

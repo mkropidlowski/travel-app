@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import CardsContainer from '../CardsContainer/CardsContainer';
 import { getAllAttraction } from 'api/api';
 import { BE_Attraction } from 'types/types';
+import { useSession } from 'next-auth/react';
 
 export interface IAttractions {}
 

@@ -1,12 +1,16 @@
+'use client';
 import { FC } from 'react';
-import { NavbarProps } from './types';
+import { MenuLinksProps, NavbarProps } from './types';
 import clsx from 'clsx';
 import { menuLinks } from './helpers';
 import Link from 'next/link';
 import Button from 'components/atoms/Button/Button';
 import Heading from 'components/atoms/Heading/Heading';
+import { useSession } from 'next-auth/react';
 
 const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
+	const { data } = useSession();
+
 	return (
 		<nav
 			className={clsx('flex flex-wrap justify-around items-center w-full bg-primary h-navBarHeight min-h-navBarHeight')}
@@ -17,9 +21,10 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 				</Link>
 			</Heading>
 			<ul className={clsx('flex items-center gap-5')}>
-				{Object.values(links).map(({ id, text, redirectToComponent }) => {
+				{Object.values(links).map(({ id, text, redirectToComponent }: MenuLinksProps) => {
 					const linkHref = `/#${id}`;
 					const hrefToComponent = `/pages/${id}`;
+
 					return (
 						<li key={id}>
 							{redirectToComponent ? (
@@ -39,6 +44,19 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 					);
 				})}
 			</ul>
+			{data?.user ? (
+				<Link href="/pages/panel">
+					<Button color="tertiary" size="small">
+						Witaj, {data?.user?.name}
+					</Button>
+				</Link>
+			) : (
+				<Link href="/pages/login">
+					<Button color="tertiary" size="small">
+						Zaloguj
+					</Button>
+				</Link>
+			)}
 		</nav>
 	);
 };
