@@ -6,7 +6,8 @@ import { menuLinks } from './helpers';
 import Link from 'next/link';
 import Button from 'components/atoms/Button/Button';
 import Heading from 'components/atoms/Heading/Heading';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
 
 const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 	const { data } = useSession();
@@ -45,11 +46,16 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 				})}
 			</ul>
 			{data?.user ? (
-				<Link href="/pages/panel">
-					<Button color="tertiary" size="small">
-						Witaj, {data?.user?.name}
+				<div className="flex gap-5">
+					<Link href="/pages/panel">
+						<Button color="tertiary" size="small">
+							Witaj, {data?.user?.name}
+						</Button>
+					</Link>
+					<Button color="secondary" size="small" onClick={() => signOut()}>
+						Wyloguj
 					</Button>
-				</Link>
+				</div>
 			) : (
 				<Link href="/pages/login">
 					<Button color="tertiary" size="small">

@@ -13,10 +13,12 @@ import { db } from 'config/firebase/config';
 import 'firebase/database';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { validationSchema } from './validation';
+import { useSession } from 'next-auth/react';
 
 const AddAttractionForm: FC<BE_Attraction> = () => {
 	const [responseStatus, setResponseStatus] = useState<ResponseStatus>('default');
 	const formRef = useRef<HTMLFormElement | null>(null);
+	const { data } = useSession();
 
 	const randomId = Math.random().toString(16).slice(2);
 
@@ -35,7 +37,7 @@ const AddAttractionForm: FC<BE_Attraction> = () => {
 		const getData = getValues();
 		setResponseStatus('pending');
 		try {
-			addNewAttraction(getData);
+			addNewAttraction({ ...getData, ifUserIsLoggedEmail: data?.user?.email });
 			setResponseStatus('sent');
 			formRef.current?.reset();
 		} catch (error) {

@@ -10,12 +10,14 @@ import { signIn } from 'next-auth/react';
 import { redirect } from 'next/dist/server/api-utils';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 type Variant = 'LOGIN' | 'REGISTER';
 
 const LoginForm: FC = () => {
 	const [variant, setVariant] = useState<Variant>('LOGIN');
 	const [isLoading, setIsLoading] = useState(false);
+	const router = useRouter();
 
 	const toogleVariant = useCallback(() => {
 		if (variant === 'LOGIN') {
@@ -43,15 +45,17 @@ const LoginForm: FC = () => {
 				});
 		}
 		if (variant === 'LOGIN') {
-			signIn('credentials', { ...data, redirect: true, callbackUrl: '/' })
+			signIn('credentials', { ...data, redirect: false })
 				.then((callback) => {
 					if (callback?.error) {
-						toast.error('Błędne dane logowania.');
+						toast.error('Niepoprawne dane logowania.');
 					}
 					if (callback?.ok && !callback?.error) {
 						toast.success('Zalogowano.');
+						router.push('/pages/panel');
 					}
 				})
+
 				.finally(() => setIsLoading(false));
 		}
 	};

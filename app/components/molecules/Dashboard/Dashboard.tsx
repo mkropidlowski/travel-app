@@ -1,8 +1,15 @@
+import Layout from 'components/organism/Layout/Layout';
+import UserNavPanel from '../UserNavPanel/UserNavPanel';
+
 const Dashboard = () => {
 	return (
-		<div>
-			<h2>admin page</h2>
-		</div>
+		<>
+			<Layout>
+				<section className="mt-[50px] max-w-[1300px] flex items-start justify-center gap-10">
+					<UserNavPanel />
+				</section>
+			</Layout>
+		</>
 	);
 };
 

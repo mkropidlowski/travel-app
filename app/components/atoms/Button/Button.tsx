@@ -7,10 +7,11 @@ interface Props extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
 	color?: 'primary' | 'secondary' | 'tertiary';
 	size?: 'large' | 'medium' | 'small';
 	type?: 'button' | 'submit' | 'reset';
+	onClick?: () => void;
 }
 
 const Button = forwardRef<HTMLButtonElement, Props>(
-	({ color = 'primary', type = 'button', size = 'medium', className, children, ...rest }, ref) => {
+	({ color = 'primary', type = 'button', size = 'medium', className, children, onClick, ...rest }, ref) => {
 		return (
 			<button
 				className={clsx(
@@ -19,6 +20,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(
 					styles[`button${capitalize(size)}`],
 					className
 				)}
+				onClick={onClick}
 			>
 				{children}
 			</button>

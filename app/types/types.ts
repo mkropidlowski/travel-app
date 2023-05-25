@@ -11,5 +11,6 @@ export interface BE_Attraction {
 	phone?: string;
 	email?: string;
 	wwwLink?: string;
+	ifUserIsLoggedEmail?: string | null;
 }
 

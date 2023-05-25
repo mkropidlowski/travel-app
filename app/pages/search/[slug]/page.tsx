@@ -23,7 +23,7 @@ const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => 
 	const searchByProvince = attractions.filter((singleProvince) => singleProvince.province === provinceName);
 
 	if (provinceName !== searchByProvince[0]?.province) {
-		return <ErrorPage />;
+		return <ErrorPage errorHeading="Brak wyszukiwanych atrakcji." shouldShowRedirect shouldShowFooter />;
 	}
 
 	return (
