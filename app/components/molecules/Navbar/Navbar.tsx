@@ -52,7 +52,7 @@ const Navbar: FC<NavbarProps> = ({ className, links = menuLinks }) => {
 							Witaj, {data?.user?.name}
 						</Button>
 					</Link>
-					<Button color="secondary" size="small" onClick={() => signOut()}>
+					<Button color="secondary" size="small" onClick={() => signOut({ callbackUrl: '/' })}>
 						Wyloguj
 					</Button>
 				</div>
