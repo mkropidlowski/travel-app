@@ -23,7 +23,7 @@ const AddAttractionForm: FC<BE_Attraction> = () => {
 	const randomId = Math.random().toString(16).slice(2);
 
 	const addNewAttraction = (newAttraction: BE_Attraction) => {
-		set(ref(db, 'attractions/' + randomId), newAttraction);
+		set(ref(db, 'attractionsToConfirm/' + randomId), newAttraction);
 	};
 
 	const {
@@ -37,7 +37,7 @@ const AddAttractionForm: FC<BE_Attraction> = () => {
 		const getData = getValues();
 		setResponseStatus('pending');
 		try {
-			addNewAttraction({ ...getData, ifUserIsLoggedEmail: data?.user?.email });
+			addNewAttraction({ ...getData, ...(data?.user?.email && { ifUserIsLoggedEmail: data.user.email }) });
 			setResponseStatus('sent');
 			formRef.current?.reset();
 		} catch (error) {

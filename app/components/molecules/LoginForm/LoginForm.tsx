@@ -7,7 +7,6 @@ import { FieldValues, useForm, SubmitHandler } from 'react-hook-form';
 import AuthButton from './components/AuthButton';
 import { BsGithub, BsGoogle } from 'react-icons/bs';
 import { signIn } from 'next-auth/react';
-import { redirect } from 'next/dist/server/api-utils';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -42,6 +41,8 @@ const LoginForm: FC = () => {
 				.catch(() => toast.error('Upss.. coś poszło nie tak.'))
 				.finally(() => {
 					setIsLoading(false);
+					toast.success('Konto zostało utworzone, zaloguj się.');
+					router.push('/');
 				});
 		}
 		if (variant === 'LOGIN') {

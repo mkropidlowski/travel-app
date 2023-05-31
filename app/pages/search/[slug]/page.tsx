@@ -17,7 +17,7 @@ const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => 
 	const provinceName = decodeURIComponent(params.slug);
 
 	useEffect(() => {
-		getAllAttraction().then((data) => setAttractions(data));
+		getAllAttraction('attractions').then((data) => setAttractions(data));
 	}, []);
 
 	const searchByProvince = attractions.filter((singleProvince) => singleProvince.province === provinceName);
@@ -36,7 +36,7 @@ const SearchSpecyficAttractions = ({ params }: { params: { slug: string } }) => 
 					</Heading>
 				</SectionHeading>
 				{searchByProvince ? (
-					<section className={clsx('mt-[100px] flex justify-center gap-7 max-w-[1000px] h-fit m-auto')}>
+					<section className={clsx('mt-[100px] flex justify-center flex-wrap gap-7 max-w-[1200px] h-fit m-auto')}>
 						{searchByProvince.map((province, i) => (
 							<div key={i}>
 								<Card attraction={province} />

@@ -40,3 +40,19 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
+
+model TemporaryAttraction {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+	title  String?
+	description String?
+	city String?
+	province String?
+	category String?
+	src String?
+	price String?
+	priceCurrency String?
+	phone String?
+	email String?
+	wwwLink String?
+  ifUserIsLoggedEmail String?
+}

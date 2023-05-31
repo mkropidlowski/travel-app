@@ -16,7 +16,7 @@ const CityAttractionDetails = ({ params }: { params: { slug: string } }) => {
 	const cityId = decodeURIComponent(params.slug);
 
 	useEffect(() => {
-		getAllAttraction().then((data) => setAttractions(data));
+		getAllAttraction('attractions').then((data) => setAttractions(data));
 	}, []);
 
 	const cities = attractions.filter((singleCity) => singleCity.city === cityId);

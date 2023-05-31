@@ -17,7 +17,7 @@ const PopularAttraction: FC<IProps> = ({ attraction }) => {
 	const router = useRouter();
 
 	useEffect(() => {
-		getAllAttraction().then((data) => setAttractions(data));
+		getAllAttraction('attractions').then((data) => setAttractions(data));
 	}, []);
 
 	const getCityCount = (attrsCity: BE_Attraction[]) => {

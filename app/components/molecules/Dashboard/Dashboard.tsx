@@ -10,7 +10,7 @@ const Dashboard = () => {
 		<>
 			<Layout>
 				{data ? (
-					<section className="mt-[50px] max-w-[1300px] flex items-start justify-center gap-10">
+					<section className="mt-[50px] max-w-[1300px] flex items-start justify-center gap-10 m-auto">
 						<UserNavPanel />
 					</section>
 				) : (

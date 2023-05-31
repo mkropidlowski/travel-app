@@ -9,7 +9,7 @@ const AttractionsDetailsPage = ({ params }: { params: { slug: string } }) => {
 	const attractionId = params.slug;
 
 	useEffect(() => {
-		getAllAttraction().then((data) => setAttractions(data));
+		getAllAttraction('attractions').then((data) => setAttractions(data));
 	}, []);
 
 	const selectedAttr = attractions.find((attraction) => attraction.id === attractionId);

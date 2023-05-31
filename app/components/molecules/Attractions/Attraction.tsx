@@ -5,15 +5,12 @@ import clsx from 'clsx';
 import CardsContainer from '../CardsContainer/CardsContainer';
 import { getAllAttraction } from 'api/api';
 import { BE_Attraction } from 'types/types';
-import { useSession } from 'next-auth/react';
 
-export interface IAttractions {}
-
-const Attractions: FC<IAttractions> = () => {
+const Attractions: FC = () => {
 	const [attractions, setAttractions] = useState<BE_Attraction[]>([]);
 
 	useEffect(() => {
-		getAllAttraction().then((data) => setAttractions(data));
+		getAllAttraction('attractions').then((data) => setAttractions(data));
 	}, []);
 
 	return (

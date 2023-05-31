@@ -5,6 +5,7 @@ import PopularAttraction from 'components/molecules/PopularAttraction/PopularAtt
 import SectionsLayout from 'components/organism/SectionsLayout/SectionsLayout';
 import Attractions from 'components/molecules/Attractions/Attraction';
 import Footer from 'components/organism/Footer/Footer';
+import { PrismaClient } from '@prisma/client';
 
 const Home: NextPage = () => {
 	return (
