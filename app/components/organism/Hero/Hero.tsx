@@ -11,7 +11,7 @@ const Hero = () => {
 			style={{ backgroundImage: `url(${background.src})` }}
 		>
 			<div className={clsx('flex flex-col items-center absolute top-[150px]')}>
-				<Heading variant="h1" className={clsx('text-white text-6xl font-medium')}>
+				<Heading variant="h1" className={clsx('text-white font-medium text-3xl w-[320px] sm:text-6xl sm:w-auto')}>
 					Znajdź atrakcje w swojej okolicy!
 				</Heading>
 				<SearchBar />

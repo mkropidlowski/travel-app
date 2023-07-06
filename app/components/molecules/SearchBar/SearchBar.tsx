@@ -35,9 +35,9 @@ const SearchBar: FC = () => {
 	};
 
 	return (
-		<div className={clsx('relative top-[60px] min-w-[800px] h-fit rounded-3xl  bg-slate-200')}>
+		<div className={clsx('relative top-[60px] md:min-w-[800px] w-[320px] h-fit rounded-3xl bg-slate-200')}>
 			<form className={clsx('flex flex-col items-center justify-center w-full p-3 gap-8')} onSubmit={handleSubmit}>
-				<div className={clsx('flex items-center justify-center gap-10')}>
+				<div className={clsx('flex flex-col md:flex-row items-center justify-center gap-10')}>
 					<SelectField onChange={handleProvinceSearch} required />
 					<Input type="text" placeholder="Miasto" value={cityInput} onChange={(e) => setCityInput(e.target.value)} />
 					<Input type="text" placeholder="Wpisz nazwę atrakcji" />
